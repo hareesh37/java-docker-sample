@@ -7,7 +7,7 @@ Container used for built: maven:3.6.0-jdk-11-slim
 Container used for packaging (executable): openjdk:11-jre-slim
 
 ## Generate sample maven project
-Using spring initializer to generate a demo app https://start.spring.io/
+Using spring initializer to generate a demo app https://start.spring.io/ 
 
 ## Create a multi-stage build Dockerfile
 
@@ -22,6 +22,7 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 
 #
 # PACKAGE STAGE
+#
 #
 FROM openjdk:11-jre-slim 
 COPY --from=build /usr/src/app/target/demo-0.0.1-SNAPSHOT.jar /usr/app/demo-0.0.1-SNAPSHOT.jar  
